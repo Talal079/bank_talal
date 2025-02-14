@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بنك الشمس</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://th.bing.com/th/id/R.697f81fe3fb86332671378d7bc5090c1?rik=kmaEcX%2bFu%2fY%2bWg&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Making the background fixed */
+            color: white;
+            transition: background-image 0.5s ease;
+            padding: 20px;
+        }
+        .content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 90%;
+            max-width: 500px;
+            transition: all 0.5s ease;
+            text-align: center;
+        }
+        input, button {
+            padding: 14px;
+            margin: 10px 0;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .media {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            transition: all 0.5s ease;
+        }
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .content {
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            input, button {
+                font-size: 14px;
+                padding: 10px;
+            }
+            #result {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>بنك الشمس</h1>
+        <p>أدخل اسم الشخصية لترى الستارز والإنذارات</p>
+        <input type="text" id="characterName" placeholder="اسم الشخصية">
+        <button onclick="showStars()">إظهار المعلومات</button>
+        <div id="result"></div>
+    </div>
+    
+    <footer>
+        <p>حقوق الطبع والنشر محفوظة <a href="https://www.instagram.com/talal_megumi" target="_blank">talal_megumi</a></p>
+    </footer>
+
+    <script>
+        const characters = [
+            { name: "فايوليت", stars: 1500, alerts: 0, rank: "الملكة", mediaUrl: 'https://media1.tenor.com/m/TZ89Av8QBVkAAAAd/violet-evergarden-violet.gif' },
+            { name: "شوتو", stars: 1500, alerts: 0, rank: "وزير", mediaUrl: 'https://64.media.tumblr.com/2ab9ce88b76275915865b615a0934a24/c5f1d2f2eb86057c-03/s1280x1920/27a5ca69c458325cc450f9f02304c39bff4deb7d.gifv' },
+            { name: "توكيتو", stars: 1500, alerts: 0, rank: "رائيس الوزراء", mediaUrl: 'https://media1.tenor.com/m/VO0p4rzSGQ4AAAAd/demon-slayer-kimetsu-no-yaiba.gif' },
+            { name: "ميغومي", stars: 1500, alerts: 0, rank: "مؤسس البنك", mediaUrl: 'https://i.pinimg.com/736x/b4/2d/2d/b42d2d4b0800b8a5f42efac5a47c7f9c.jpg' },
+            { name: "ايزن", stars: 1500, alerts: 0, rank: "نائب وزير", mediaUrl: 'https://media1.tenor.com/m/efkQYGrEwaMAAAAC/aizen-bleach.gif' },
+        ];
+
+        function showStars() {
+            const name = document.getElementById("characterName").value.trim();
+            const resultDiv = document.getElementById("result");
+
+            if (!name) {
+                resultDiv.innerHTML = "الرجاء إدخال اسم شخصية.";
+                return;
+            }
+
+            const character = characters.find(char => char.name === name);
+
+            if (!character) {
+                resultDiv.innerHTML = "الشخصية غير موجودة.";
+                resultDiv.innerHTML += <img class="media" src="https://th.bing.com/th/id/R.697f81fe3fb86332671378d7bc5090c1?rik=kmaEcX%2bFu%2fY%2bWg&pid=ImgRaw&r=0" alt="characters background" />;
+                return;
+            }
+
+            resultDiv.innerHTML = `
+                <p>الرتبة: ${character.rank}</p>
+                <p>الستارز: ${character.stars}</p>
+                <p>الإنذارات: ${character.alerts}</p>
+                <img class="media" src="${character.mediaUrl}" alt="${character.name}" />`;
+        }
+    </script>
+</body>
+</html>
