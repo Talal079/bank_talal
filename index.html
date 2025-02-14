@@ -46,7 +46,7 @@
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: rgba(255, 255, 255, 0.4);
+            background-color: rgba(255, 255, 0, 0.4);
         }
         #result {
             font-size: 18px;
@@ -98,10 +98,23 @@
 
     <script>
         const characters = [
-            { name: "فايوليت", stars: 100000000, alerts: 0, rank: "الملكة", mediaUrl: 'https://media1.tenor.com/m/TZ89Av8QBVkAAAAd/violet-evergarden-violet.gif' },
-            { name: "شوتو", stars: 1500, alerts: 0, rank: "وزير", mediaUrl: 'https://64.media.tumblr.com/2ab9ce88b76275915865b615a0934a24/c5f1d2f2eb86057c-03/s1280x1920/27a5ca69c458325cc450f9f02304c39bff4deb7d.gifv' },
-            { name: "توكيتو", stars: 1500, alerts: 0, rank: "رائيس الوزراء", mediaUrl: 'https://media1.tenor.com/m/VO0p4rzSGQ4AAAAd/demon-slayer-kimetsu-no-yaiba.gif' },
-            { name: "ميغومي", stars: 1500, alerts: 0, rank: "مؤسس البنك", mediaUrl: 'https://media1.tenor.com/m/AtKrHqCCRsEAAAAC/megumi.gif' },
+            { name: "فايوليت", stars: "لانهائي", alerts: 0, rank: "الملكة", mediaUrl: 'https://media1.tenor.com/m/TZ89Av8QBVkAAAAd/violet-evergarden-violet.gif' },
+            { name: "شوتو", stars: 0, alerts: 0, rank: "وزير", mediaUrl: 'https://64.media.tumblr.com/2ab9ce88b76275915865b615a0934a24/c5f1d2f2eb86057c-03/s1280x1920/27a5ca69c458325cc450f9f02304c39bff4deb7d.gifv' },
+            { name: "توكيتو", stars: 0, alerts: 0, rank: "رقاصة", mediaUrl: 'https://media.giphy.com/media/Kef0FH2IQ9K3m/giphy.gif?cid=790b7611y7qym5gtqca567h9w7swkyhfebzmsf3d67zfo29c&ep=v1_gifs_search&rid=giphy.gif&ct=g' },
+            { name: "ميغومي", stars: "لانهائي", alerts: 0, rank: "مؤسس البنك", mediaUrl: 'https://media1.tenor.com/m/AtKrHqCCRsEAAAAC/megumi.gif' },
+            { name: "تشيفويو", stars: 0, alerts: 0, rank: "قاضي", mediaUrl: 'https://media.tenor.com/9S_FtZonEkAAAAAM/chifuyu-matsuno-tokyo-revengers-season2.gif' },
+            { name: "زيف 💎", stars: 0, alerts: 0, rank: "قائد", mediaUrl: 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnJkeDR6NjlkcXQzNTR1YmJ6Njd2d3dtMTdra3FjaDJ3Zmc4MTlrcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26pQdsZfm5GDiOnEjr/giphy.gif' },
+            { name: "لوفي 💎", stars: 0, alerts: 0, rank: "نائب قائد", mediaUrl: 'https://tenor.com/bR5VO.gif' },
+            { name: "نوبارا 💎", stars: 0, alerts: 0, rank: "مستشار", mediaUrl: 'https://media2.giphy.com/media/79GQ7WZam5PRBz4QeS/200.webp?cid=790b7611cp9xut3w4isbmxg45egabkfrpb18cxswpwppeuzf&ep=v1_gifs_search&rid=200.webp&ct=g' },
+            { name: "سالي 💎", stars: 0, alerts: 0, rank: "مشرفه", mediaUrl: 'https://i.makeagif.com/media/12-11-2015/9YVnYo.gif' },
+            { name: "هيناتا 💎", stars: 0, alerts: 0, rank: "", mediaUrl: 'https://media.giphy.com/media/LehVffoqlX6Ss/giphy.gif?cid=790b761181k4pam1bjv3xfpj9wjdsuravf3odtw5jvwayiwb&ep=v1_gifs_search&rid=giphy.gif&ct=g' },
+            { name: "ريتشل ", stars: 0, alerts: 0, rank: "مشرفه", mediaUrl: 'https://th.bing.com/th/id/R.5ef0f721000761d9b6a6fbde74c3450b?rik=ctk8u%2bNG6cufog&pid=ImgRaw&r=0' },
+            { name: "مادارا 💎", stars: 0, alerts: 0, rank: "مشرف", mediaUrl: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3luOTQ1eWM4M3NjZ3FtZzJkNWg5ZGFuZTFhODNic3gwb2Q5OHV1ayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/8qXJTU5oEhQZO/giphy.gif' },
+            { name: "سمولي 💎", stars: 0, alerts: 0, rank: "مشرف", mediaUrl: 'https://th.bing.com/th/id/R.68646d97c953d504c1057cf5417434c2?rik=nHi%2f7nEbJ7i1RQ&pid=ImgRaw&r=0' },
+            { name: "ريا 💎", stars: 0, alerts: 0, rank: "مشرف", mediaUrl: 'https://th.bing.com/th/id/R.68646d97c953d504c1057cf5417434c2?rik=nHi%2f7nEbJ7i1RQ&pid=ImgRaw&r=0' },
+            { name: "هيستوريا 🌍", stars: 0, alerts: 0, rank: "", mediaUrl: 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDNoMnFkOThqMXN5NWk4OW1pdDRjZ3BqY2l2emlsNTVicmMybWpweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPgB7T5WJiVKCGs/giphy.gif' },
+
+
         ];
 
         function showStars() {
