@@ -112,7 +112,6 @@
                 resultDiv.innerHTML = "الرجاء إدخال اسم شخصية.";
                 return;
             }
-
             const character = characters.find(char => char.name === name);
 
             if (!character) {
@@ -120,7 +119,6 @@
                 resultDiv.innerHTML += <img class="media" src="https://th.bing.com/th/id/R.697f81fe3fb86332671378d7bc5090c1?rik=kmaEcX%2bFu%2fY%2bWg&pid=ImgRaw&r=0" alt="characters background" />;
                 return;
             }
-
             resultDiv.innerHTML = `
                 <p>الرتبة: ${character.rank}</p>;
                 <p>الستارز: ${character.stars}</p>;
