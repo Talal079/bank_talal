@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بنك الشمس</title>
+    <title>BANK</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,10 +13,11 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('https://th.bing.com/th/id/R.697f81fe3fb86332671378d7bc5090c1?rik=kmaEcX%2bFu%2fY%2bWg&pid=ImgRaw&r=0');
+            background-image: url('https://arabradio.us/wp-content/uploads/2019/12/%D8%B5%D9%88%D8%B1-%D8%A7%D9%84%D9%81%D8%B6%D8%A7%D8%A1-16.jpg');
             background-size: cover;
+
             background-position: center;
-            background-attachment: fixed; /* Making the background fixed */
+            background-attachment: fixed; 
             color: white;
             transition: background-image 0.5s ease;
             padding: 20px;
@@ -83,6 +84,7 @@
     </style>
 </head>
 <body>
+    <title>talal_megumi</title>
     <div class="content">
         <h1>بنك الشمس</h1>
         <p>أدخل اسم الشخصية لترى الستارز والإنذارات</p>
@@ -90,16 +92,22 @@
         <button onclick="showStars()">إظهار المعلومات</button>
         <div id="result"></div>
     </div>
+    
     <footer>
         <p>حقوق الطبع والنشر محفوظة <a href="https://www.instagram.com/talal_megumi" target="_blank">talal_megumi</a></p>
     </footer>
+
     <script>
         const characters = [
-            { name: "فايوليت", stars: 1500, alerts: 0, rank: "الملكة", mediaUrl: 'https://media1.tenor.com/m/TZ89Av8QBVkAAAAd/violet-evergarden-violet.gif' },
+            { name: "فايوليت", stars: 100000000, alerts: 0, rank: "الملكة", mediaUrl: 'https://media1.tenor.com/m/TZ89Av8QBVkAAAAd/violet-evergarden-violet.gif' },
             { name: "شوتو", stars: 1500, alerts: 0, rank: "وزير", mediaUrl: 'https://64.media.tumblr.com/2ab9ce88b76275915865b615a0934a24/c5f1d2f2eb86057c-03/s1280x1920/27a5ca69c458325cc450f9f02304c39bff4deb7d.gifv' },
             { name: "توكيتو", stars: 1500, alerts: 0, rank: "رائيس الوزراء", mediaUrl: 'https://media1.tenor.com/m/VO0p4rzSGQ4AAAAd/demon-slayer-kimetsu-no-yaiba.gif' },
-            { name: "ميغومي", stars: 1500, alerts: 0, rank: "مؤسس البنك", mediaUrl: 'https://i.pinimg.com/736x/b4/2d/2d/b42d2d4b0800b8a5f42efac5a47c7f9c.jpg' },
-            { name: "ايزن", stars: 1500, alerts: 0, rank: "نائب وزير", mediaUrl: 'https://media1.tenor.com/m/efkQYGrEwaMAAAAC/aizen-bleach.gif' },
+            { name: "ميغومي", stars: 1500, alerts: 0, rank: "مؤسس البنك", mediaUrl: 'https://media1.tenor.com/m/AtKrHqCCRsEAAAAC/megumi.gif' },
+            { name: "", stars: 1500, alerts: 0, rank: "", mediaUrl: '' },
+            { name: "", stars: 1500, alerts: 0, rank: "", mediaUrl: '' },
+            { name: "", stars: 1500, alerts: 0, rank: "", mediaUrl: '' },
+            { name: "", stars: 1500, alerts: 0, rank: "", mediaUrl: '' },
+            { name: "", stars: 1500, alerts: 0, rank: "", mediaUrl: '' },
         ];
 
         function showStars() {
@@ -110,13 +118,15 @@
                 resultDiv.innerHTML = "الرجاء إدخال اسم شخصية.";
                 return;
             }
+
             const character = characters.find(char => char.name === name);
 
             if (!character) {
                 resultDiv.innerHTML = "الشخصية غير موجودة.";
-                resultDiv.innerHTML += <img class="media" src="https://th.bing.com/th/id/R.697f81fe3fb86332671378d7bc5090c1?rik=kmaEcX%2bFu%2fY%2bWg&pid=ImgRaw&r=0" alt="characters background" />;
+                resultDiv.innerHTML += <img class="media" src="https://th.bing.com/th/id/R.68646d97c953d504c1057cf5417434c2?rik=nHi%2f7nEbJ7i1RQ&pid=ImgRaw&r=0" />;
                 return;
             }
+
             resultDiv.innerHTML = `
                 <p>الرتبة: ${character.rank}</p>;
                 <p>الستارز: ${character.stars}</p>;
